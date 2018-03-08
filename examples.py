@@ -1,11 +1,12 @@
 import http.server
 import json
 import asyncio
-from botbuilder.schema import (Activity, ActivityTypes, ChannelAccount)
+from botbuilder.schema import (Activity, ActivityTypes, ChannelAccount, HeroCard)
 from botbuilder.core import BotFrameworkAdapter
 from botbuilder.schema import (Activity, ActivityTypes, ChannelAccount)
 from botframework.connector import ConnectorClient
 from botframework.connector.auth import (MicrosoftAppCredentials, JwtTokenValidation, SimpleCredentialProvider)
+from botframework.connector.models import CardImage
 
 APP_ID = ''
 APP_PASSWORD = ''
@@ -13,15 +14,13 @@ APP_PASSWORD = ''
 class BotRequestHandler(http.server.BaseHTTPRequestHandler):
 
     @staticmethod
-    def __create_reply_activity(request_activity, text):
-        return Activity(
-            type=ActivityTypes.message,
-            channel_id=request_activity.channel_id,
-            conversation=request_activity.conversation,
-            recipient=request_activity.from_property,
-            from_property=request_activity.recipient,
-            text=text,
-            service_url=request_activity.service_url)
+    def __create_hero_cart(request_activity, title, url):
+        return HeroCard(
+            title="Test hero card image",
+            subtitle="Testing subtitle",
+            text="Here is some text",
+            images=[CardImage()]
+        )
 
     def __handle_conversation_update_activity(self, activity: Activity):
         self.send_response(202)
