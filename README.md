@@ -93,3 +93,18 @@ Now you are ready to run the endpoint.
     python .\main.py
 
 The output will say that the service is listening on localhost at port 9000. Now boot the Bot Emulator and connection to it. The echo bot in `main.py` is what is on the [botbuilder-python SDK wiki](https://github.com/Microsoft/botbuilder-python/wiki), and it will echo back the statements you give it.
+
+### Using Visual Studio Code
+
+My preference is to use Visual Studio Code for Python development This requires two small changes to get up-and-running with the virtual environment correctly.
+
+In your `settings.json` file, add the following configuration:
+
+    {
+        "python.pythonPath": "C:\\PATH_TO_PYBOT\\Scripts\\python.exe",
+        "python.autoComplete.extraPaths": [
+            "C:\\PATH_TO_PYBOT\\Lib\\site-packages"
+        ]
+    }
+
+In this snippet, `PATH_TO_PYBOT` represents the path to the project root.
