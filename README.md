@@ -11,7 +11,7 @@ There's barely anything in this repository, so I'm not sure why you would want t
 
 ### Installation
 
-Make sure you have Python installed (obviously). I recommend the Anaconda distribution, as it comes a lot of the mathematic, data science, and machine learning libraries used for artificial intelligence.
+Make sure you have Python installed (obviously). I recommend the Anaconda distribution, as it comes a lot of the mathematics, data science, and machine learning libraries used for artificial intelligence.
 
 #### Cloning and Virtual Environment
 
